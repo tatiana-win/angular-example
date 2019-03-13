@@ -1,0 +1,101 @@
+<form
+  novalidate
+  [formGroup]="form"
+  (ngSubmit)="onSubmit()"
+  data-test-id="customers-search-form"
+>
+  <div class="d-flex justify-content-between">
+    <div class="d-flex">
+      <div
+        class="input-container"
+        data-test-id="phone"
+      >
+        <label class="font-weight-bold">
+          {{ 'CUSTOMERS.phone' | translate }}
+        </label>
+
+        <input
+          #phoneInput
+          id="phone"
+          type="text"
+          class="form-control"
+          formControlName="phone"
+          placeholder="+_ (___) ___-__-__"
+          [textMask]="{mask: phoneMask}"
+        />
+      </div>
+
+      <div
+        class="input-container"
+        data-test-id="email"
+      >
+        <label class="font-weight-bold">
+          {{ 'CUSTOMERS.email' | translate }}
+        </label>
+
+        <input
+          id="email"
+          type="text"
+          class="form-control"
+          formControlName="email"
+        />
+      </div>
+
+      <div
+        class="input-container"
+        data-test-id="last-name"
+      >
+        <label class="font-weight-bold">
+          {{ 'CUSTOMERS.lastName' | translate }}
+        </label>
+
+        <input
+          id="last-name"
+          type="text"
+          class="form-control"
+          formControlName="lastName"
+        />
+      </div>
+
+      <div
+        class="input-container"
+        data-test-id="first-name"
+      >
+        <label class="font-weight-bold">
+          {{ 'CUSTOMERS.firstName' | translate }}
+        </label>
+
+        <input
+          id="first-name"
+          type="text"
+          class="form-control"
+          formControlName="firstName"
+        />
+      </div>
+
+      <div
+        class="input-container"
+        data-test-id="promo-code"
+      >
+        <label class="font-weight-bold">
+          {{ 'CUSTOMERS.promoCode' | translate }}
+        </label>
+
+        <input
+          id="promo-code"
+          type="text"
+          class="form-control"
+          formControlName="promoCode"
+        />
+      </div>
+
+      <button
+        type="submit"
+        class="btn btn-primary search-button"
+      >
+        {{ 'CUSTOMERS.search' | translate }}
+      </button>
+
+    </div>
+  </div>
+</form>

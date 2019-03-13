@@ -1,0 +1,12 @@
+.customer-row {
+  cursor: pointer;
+}
+
+.icon-button {
+  width: 50px;
+  height: 40px;
+}
+
+.button-cell {
+  padding: 0;
+}

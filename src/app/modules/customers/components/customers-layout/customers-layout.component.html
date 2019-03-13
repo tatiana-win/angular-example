@@ -1,0 +1,40 @@
+<ul
+  class="nav nav-pills pills"
+  data-test-id="customers-layout-menu"
+>
+  <li class="nav-item">
+    <a
+      class="nav-link"
+      routerLink="./all"
+      routerLinkActive="active"
+      data-test-id="all-customers"
+    >
+      {{ 'CUSTOMERS.all' | translate }}
+    </a>
+  </li>
+
+  <li class="nav-item">
+    <a
+      class="nav-link"
+      routerLink="./active"
+      routerLinkActive="active"
+      data-test-id="active-customers"
+    >
+      {{ 'CUSTOMERS.active' | translate }}
+    </a>
+  </li>
+
+  <li class="nav-item">
+    <a
+      class="nav-link"
+      routerLink="./blocked"
+      routerLinkActive="active"
+      data-test-id="blocked-customers"
+    >
+      {{ 'CUSTOMERS.blocked' | translate }}
+    </a>
+  </li>
+
+</ul>
+
+<router-outlet></router-outlet>

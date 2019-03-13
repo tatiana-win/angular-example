@@ -1,0 +1,10 @@
+.region-filter {
+  align-items: flex-end;
+  justify-content: flex-end;
+  margin-bottom: 20px;
+}
+
+.region {
+  margin-left: 20px;
+  width: auto;
+}

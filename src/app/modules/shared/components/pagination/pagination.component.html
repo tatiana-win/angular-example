@@ -1,0 +1,40 @@
+<ul
+  class="pagination"
+  *ngIf="!!pages.length && pagesCount > 1"
+>
+  <li
+    *ngIf="pages[0] != 1"
+    class="first page-item"
+  >
+    <a
+      class="page-link"
+      (click)="setPage(1)"
+    >
+      {{ 'LAYOUT.PAGINATION.first' | translate }}
+    </a>
+  </li>
+  <li
+    *ngFor="let page of pages;"
+    class="page-item"
+    [class.active]="page === currentPage"
+  >
+    <a
+      [attr.data-page]="page"
+      (click)="setPage(page)"
+      class="page-link"
+    >
+      {{ page }}
+    </a>
+  </li>
+  <li
+    *ngIf="pages[pages.length -1] != pagesCount"
+    class="last page-item"
+  >
+    <a
+      class="page-link"
+      (click)="setPage(pagesCount)"
+    >
+      {{ 'LAYOUT.PAGINATION.last' | translate }}
+    </a>
+  </li>
+</ul>

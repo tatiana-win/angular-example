@@ -1,0 +1,77 @@
+<table
+  class="table table-hover"
+  data-test-id="customers-list"
+>
+  <thead>
+  <tr>
+    <th class="column-header">
+      {{'CUSTOMERS.name' | translate}}
+    </th>
+    <th class="column-header">
+      {{ 'CUSTOMERS.phone' | translate }}
+    </th>
+    <th class="column-header">
+      {{ 'CUSTOMERS.email' | translate }}
+    </th>
+    <th class="column-header">
+      {{ 'CUSTOMERS.registrationDate' | translate }}
+    </th>
+    <th class="column-header">
+      {{ 'CUSTOMERS.trips' | translate }}"
+      fieldName="tripsCount"
+    </th>
+    <th class="column-header">
+      {{ 'CUSTOMERS.rating' | translate }}
+    </th>
+    <th
+      class="column-header"
+      *ngIf="isBlockedCustomers()"
+    >
+    </th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr
+    *ngFor="let customer of customers"
+    [attr.data-test-email]="customer.email"
+    class="customer-row"
+    [routerLink]="customer.id"
+  >
+    <td>
+      {{ customer.lastName }} {{ customer.firstName }}
+    </td>
+    <td>
+      {{ customer.phone }}
+    </td>
+    <td>
+      {{ customer.email }}
+    </td>
+    <td>
+      <span *ngIf="!isBlockedCustomers()">
+        {{ customer.registrationDate | date }}
+      </span>
+      <span *ngIf="isBlockedCustomers()">
+        {{ customer.blockingDate | date }}
+      </span>
+    </td>
+    <td>
+      {{ customer.tripsCount }}
+    </td>
+    <td>
+      {{ customer.rating }}
+    </td>
+    <td
+      class="actions-cell button-cell"
+      *ngIf="isBlockedCustomers()"
+    >
+      <button
+        (click)="$event.stopPropagation();unblock(customer)"
+        class="icon-button"
+        data-test-id="unblock-customer"
+      >
+        <i class="fa fa-unlock"></i>
+      </button>
+    </td>
+  </tr>
+  </tbody>
+</table>

@@ -1,0 +1,30 @@
+<div class="d-flex">
+  <app-loading-indicator
+    class="max-width"
+    [isLoading]="isLoading"
+  >
+
+    <app-search-customers-form
+      *ngIf="isAllCustomers"
+      [formValue]="searchForm"
+      (formSubmitted)="onSubmit($event)"
+    >
+    </app-search-customers-form>
+
+    <app-customers-table
+      [customers]="customers"
+      [listType]="listType"
+      (listChanged)="fetchCustomers()"
+    >
+    </app-customers-table>
+
+    <app-pagination
+      [currentPage]="page"
+      [pagesCount]="pagesCount"
+      [displayCount]="5"
+      (pageChanged)="onPageChanged($event)"
+    >
+    </app-pagination>
+  </app-loading-indicator>
+</div>
+

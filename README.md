@@ -1,0 +1,1 @@
+Example of code for angular app
